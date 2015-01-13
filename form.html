@@ -878,12 +878,20 @@
         
         <div id="output"></div>
 
-<script>
-    function fileUploaded(status) {
-        document.getElementById('myForm').style.display = 'none';
-        document.getElementById('output').innerHTML = status;
-    }
-</script>
+		<script>
+		    form.addEventListener("submit", function(evt) {
+		      if (form.checkValidity() === false) {
+		        evt.preventDefault();
+		        alert("Form is invalid!");
+		        return false;
+		      } else {
+		        function fileUploaded(status) {
+			        document.getElementById('myForm').style.display = 'none';
+			        document.getElementById('output').innerHTML = status;
+			    }
+		      }
+		    });
+		</script>
         
 	</body>
 </html>
