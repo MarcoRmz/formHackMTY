@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,11 +6,716 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HackMTY Registration</title>
-	<link rel="stylesheet" type="text/css" href="view.css" media="all">
 	<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 
 	<style>
-		
+		body {
+			background:#662d91;
+			font-family: 'Montserrat', sans-serif;
+			font-size:small;
+			margin:8px 0 16px;
+			text-align:center;
+            padding-top: 2%;
+            padding-bottom: 2%;
+		}
+
+		#form_container
+		{
+			background:#fff;
+			border-radius: 17px;
+			margin:0 auto;
+			text-align:left;
+			width: 50%;
+			min-width: 300px;
+		}
+
+		#top
+		{
+			display:block;
+			height:10px;
+			margin:10px auto 0;
+			width:650px;
+		}
+
+		#footer
+		{
+			width:640px;
+			clear:both;
+			color:#999999;
+			text-align:center;
+			width:640px;
+			padding-bottom: 15px;
+			font-size: 85%;
+		}
+
+		#footer a{
+			color:#999999;
+			text-decoration: none;
+			border-bottom: 1px dotted #999999;
+		}
+
+		#bottom
+		{
+			display:block;
+			height:10px;
+			margin:0 auto;
+			width:650px;
+		}
+
+		form.appnitro
+		{
+			margin:20px 20px 0;
+			padding:0 0 20px;
+		}
+
+		/**** Logo Section  *****/
+		h1
+		{
+			background-color:#4a0174;
+			border-top-right-radius: 15px;
+			border-top-left-radius: 15px;
+			margin:0;
+			min-height:0;
+			padding:0;
+			text-decoration:none;
+			text-indent:-8000px;
+			display:block;
+			height:100%;
+			min-height:40px;
+			overflow:hidden;
+		}
+
+		header {
+			background-color:#4a0174;
+			border-top-right-radius: 15px;
+			border-top-left-radius: 15px;
+			margin:0 auto;
+			padding: 3%;
+			display:block;
+		}
+
+		.svg-container {
+			display:block;
+			margin-left:auto;
+			margin-right: auto;
+		}
+        
+        img {
+			display:block;
+			margin-left:auto;
+			margin-right: auto;
+            width:40%;
+            min-width: 200px;
+		}
+
+
+		/**** Form Section ****/
+		.appnitro
+		{
+			font-family: 'Montserrat', sans-serif;
+			font-size:small;
+		}
+
+		.appnitro li
+		{
+			width:61%;
+		}
+
+		form ul
+		{
+			font-size:100%;
+			list-style-type:none;
+			margin:0;
+			padding:0;
+			width:100%;
+		}
+
+		form li
+		{
+			display:block;
+			margin:0;
+			padding:4px 5px 2px 9px;
+			position:relative;
+		}
+
+		form li:after
+		{
+			clear:both;
+			content:".";
+			display:block;
+			height:0;
+			visibility:hidden;
+		}
+
+		.buttons:after
+		{
+			clear:both;
+			content:".";
+			display:block;
+			height:0;
+			visibility:hidden;
+		}
+
+		.buttons
+		{
+			clear:both;
+			display:block;
+			margin-top:10px;
+		}
+
+		* html form li
+		{
+			height:1%;
+		}
+
+		* html .buttons
+		{
+			height:1%;
+		}
+
+		* html form li div
+		{
+			display:inline-block;
+		}
+
+		form li div
+		{
+			color:#444;
+			margin:0 4px 0 0;
+			padding:0 0 8px;
+		}
+
+		form li span
+		{
+			color:#444;
+			float:left;
+			margin:0 4px 0 0;
+			padding:0 0 8px;
+		}
+
+		form li div.left
+		{
+			display:inline;
+			float:left;
+			width:48%;
+		}
+
+		form li div.right
+		{
+			display:inline;
+			float:right;
+			width:48%;
+		}
+
+		form li div.left .medium
+		{
+			width:100%;
+		}
+
+		form li div.right .medium
+		{
+			width:100%;
+		}
+
+		.clear
+		{
+			clear:both;
+		}
+
+		form li div label
+		{
+			clear:both;
+			color:#444;
+			display:block;
+			font-size:9px;
+			line-height:9px;
+			margin:0;
+			padding-top:3px;
+		}
+
+		form li span label
+		{
+			clear:both;
+			color:#444;
+			display:block;
+			font-size:9px;
+			line-height:9px;
+			margin:0;
+			padding-top:3px;
+		}
+
+		form li .datepicker
+		{
+			cursor:pointer !important;
+			float:left;
+			height:16px;
+			margin:.1em 5px 0 0;
+			padding:0;
+			width:16px;
+		}
+
+		.form_description
+		{
+			border-bottom:1px dotted #ccc;
+			clear:both;
+			display:inline-block;
+			margin:0 0 1em;
+		}
+
+		.form_description[class]
+		{
+			display:block;
+		}
+
+		.form_description h2
+		{
+			color: #4a0174;
+			clear:left;
+			font-size:160%;
+			font-weight:400;
+			margin:0 0 3px;
+		}
+
+		.form_description p
+		{
+			color: #662d91;
+			font-size:95%;
+			line-height:130%;
+			margin:0 0 12px;
+		}
+
+		form hr
+		{
+			display:none;
+		}
+
+		form li.section_break
+		{
+			border-top:1px dotted #ccc;
+			margin-top:9px;
+			padding-bottom:0;
+			padding-left:9px;
+			padding-top:13px;
+			width:97% !important;
+		}
+
+		form ul li.first
+		{
+			border-top:none !important;
+			margin-top:0 !important;
+			padding-top:0 !important;
+		}
+
+		form .section_break h3
+		{
+			font-size:110%;
+			font-weight:400;
+			line-height:130%;
+			margin:0 0 2px;
+		}
+
+		form .section_break p
+		{
+			font-size:85%;
+
+			margin:0 0 10px;
+		}
+
+		/**** Buttons ****/
+		input.button_text
+		{
+			overflow:visible;
+			padding:0 7px;
+			width:auto;
+		}
+
+		.buttons input
+		{
+			font-size:120%;
+			margin-right:5px;
+		}
+
+		input[type=submit] { 
+		    width: 100px;
+			height: 40px;
+			font-size: 100%;
+			border-radius: 6px;
+			border: none;
+			background-color: #662d91;
+			color: #fff;
+			display: block;
+			margin: auto;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		input[type=submit]:hover { 
+			background-color: #4a0174;
+		}
+
+		/**** Inputs and Labels ****/
+		label.description
+		{
+			border:none;
+			color:#4a0174;
+			display:block;
+			font-size:95%;
+			font-weight:700;
+			line-height:150%;
+			padding:0 0 1px;
+		}
+
+		span.symbol
+		{
+			font-size:115%;
+			line-height:130%;
+		}
+
+		input.text
+		{
+			/*background:#fff url(../../../images/shadow.gif) repeat-x top;*/
+			width: 190px;
+		    font-size:100%;
+			height: 30px;
+		    border: 1px solid #c5c5c5;
+		    border-radius: 5px;
+		    -webkit-transition: all 0.3s ease-out;
+		    -moz-transition: all 0.3s ease-out;
+		    -ms-transition: all 0.3s ease-out;
+		    -o-transition: all 0.3s ease-out;
+		    transition: all 0.3s ease-out;
+		    font-family: 'Montserrat', sans-serif;
+		}
+
+		input.text:focus {
+		    border-color: #662d91;
+		    outline: none;
+		}
+
+		input.file
+		{
+			color:#333;
+			font-size:100%;
+			margin:0;
+			padding:2px 0;
+		}
+
+		textarea.textarea
+		{
+			/*background:#fff url(../../../images/shadow.gif) repeat-x top;*/
+			background:#fff
+			border-bottom:1px solid #ddd;
+			border-left:1px solid #c3c3c3;
+			border-right:1px solid #c3c3c3;
+			border-top:1px solid #7c7c7c;
+			color:#333;
+			font-family: 'Montserrat', sans-serif;
+			font-size:100%;
+			margin:0;
+			width:99%;
+		}
+
+		select.select
+		{
+			color:#333;
+			font-size:100%;
+			margin:1px 0;
+			padding:1px 0 0;
+			/*background:#fff url(../../../images/shadow.gif) repeat-x top;*/
+			background:#662d91;
+			border-bottom:1px solid #ddd;
+			border-left:1px solid #c3c3c3;
+			border-right:1px solid #c3c3c3;
+			border-top:1px solid #7c7c7c;
+		}
+
+
+		input.currency
+		{
+			text-align:right;
+		}
+
+		input.checkbox
+		{
+			display:block;
+			height:13px;
+			line-height:1.4em;
+			margin:6px 0 0 3px;
+			width:13px;
+		}
+
+		input.radio
+		{
+			display:block;
+			height:13px;
+			line-height:1.4em;
+			margin:6px 0 0 3px;
+			width:13px;
+		}
+
+		label.choice
+		{
+			color:#444;
+			display:block;
+			font-size:100%;
+			line-height:1.4em;
+			margin:-1.55em 0 0 25px;
+			padding:4px 0 5px;
+			width:90%;
+		}
+
+		select.select[class]
+		{
+			margin:0;
+			padding:1px 0;
+		}
+
+		*:first-child+html select.select[class]
+		{
+			margin:1px 0;
+		}
+
+		.safari select.select
+		{
+			font-size:120% !important;
+			margin-bottom:1px;
+		}
+
+		input.small
+		{
+			width:25%;
+		}
+
+		select.small
+		{
+			width:25%;
+		}
+
+		input.medium
+		{
+			width:60%;
+			min-width: 200px;
+		}
+
+		select.medium
+		{
+			width:60%;
+		}
+
+		input.large
+		{
+			width:99%;
+		}
+
+		select.large
+		{
+			width:100%;
+		}
+
+		textarea.small
+		{
+			height:5.5em;
+		}
+
+		textarea.medium
+		{
+			height:10em;
+		}
+
+		textarea.large
+		{
+			height:20em;
+		}
+
+		/**** Errors ****/
+		#error_message
+		{
+			background:#fff;
+			border:1px dotted red;
+			margin-bottom:1em;
+			padding-left:0;
+			padding-right:0;
+			padding-top:4px;
+			text-align:center;
+			width:99%;
+		}
+
+		#error_message_title
+		{
+			color:#DF0000;
+			font-size:125%;
+			margin:7px 0 5px;
+			padding:0;
+		}
+
+		#error_message_desc
+		{
+			color:#000;
+			font-size:100%;
+			margin:0 0 .8em;
+		}
+
+		#error_message_desc strong
+		{
+			background-color:#FFDFDF;
+			color:red;
+			padding:2px 3px;
+		}
+
+		form li.error
+		{
+			background-color:#FFDFDF !important;
+			border-bottom:1px solid #EACBCC;
+			border-right:1px solid #EACBCC;
+			margin:3px 0;
+		}
+
+		form li.error label
+		{
+			color:#DF0000 !important;
+		}
+
+		form p.error
+		{
+			clear:both;
+			color:red;
+			font-size:10px;
+			font-weight:700;
+			margin:0 0 5px;
+		}
+
+		form .required
+		{
+			color:red;
+			float:none;
+			font-weight:700;
+		}
+
+		/**** Guidelines and Error Highlight ****/
+		form .guidelines
+		{
+			background:#f5f5f5;
+			border:1px solid #e6e6e6;
+			color:#444;
+			font-size:80%;
+			left:100%;
+			line-height:130%;
+			margin:0 0 0 8px;
+			padding:8px 10px 9px;
+			position:absolute;
+			top:0;
+			visibility:hidden;
+			width:42%;
+			z-index:1000;
+		}
+
+		form .guidelines small
+		{
+			font-size:105%;
+		}
+
+		form li.highlighted .guidelines
+		{
+			visibility:visible;
+		}
+
+		form li:hover .guidelines
+		{
+			visibility:visible;
+		}
+
+		.no_guidelines .guidelines
+		{
+			display:none !important;
+		}
+
+		.no_guidelines form li
+		{
+			width:97%;
+		}
+
+		.no_guidelines li.section
+		{
+			padding-left:9px;
+		}
+
+		/*** Success Message ****/
+		.form_success 
+		{
+			clear: both;
+			margin: 0;
+			padding: 90px 0pt 100px;
+			text-align: center
+		}
+
+		.form_success h2 {
+		    clear:left;
+		    font-size:160%;
+		    font-weight:normal;
+		    margin:0pt 0pt 3px;
+		}
+
+		/*** Password ****/
+		ul.password{
+		    margin-top:60px;
+		    margin-bottom: 60px;
+		    text-align: center;
+		}
+		.password h2{
+		    color:#DF0000;
+		    font-weight:bold;
+		    margin:0pt auto 10px;
+		}
+
+		.password input.text {
+		   font-size:170% !important;
+		   width:380px;
+		   text-align: center;
+		}
+		.password label{
+		   display:block;
+		   font-size:120% !important;
+		   padding-top:10px;
+		   font-weight:bold;
+		}
+
+		#li_captcha{
+		   padding-left: 5px;
+		}
+
+
+		#li_captcha span{
+			float:none;
+		}
+
+		/** Embedded Form **/
+
+		.embed #form_container{
+			border: none;
+		}
+
+		.embed #top, .embed #bottom, .embed h1{
+			display: none;
+		}
+
+		.embed #form_container{
+			width: 100%;
+		}
+
+		.embed #footer{
+			text-align: left;
+			padding-left: 10px;
+			width: 99%;
+		}
+
+		.embed #footer.success{
+			text-align: center;
+		}
+
+		.embed form.appnitro
+		{
+			margin:0px 0px 0;
+			
+		}
 	</style>
 
 	</head>
@@ -19,17 +725,7 @@
 
 			<header>
 				<div class="svg-container">
-					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="331" height="221" viewBox="0 0 331 221" enable-background	="new 0 0 331 221" xml:space="preserve" style="width:95%;">
-					  <polygon fill="#662D91" points="7 8 7 193.46 85 172.68 163 193.46 163 8 "/>
-					  <polygon fill="#FFFFFF" points="82 139 73 139 73 55 61 55 61 139 52 139 52 35 61 35 61 49 73 49 73 35 82 35 "/>
-					  <polygon fill="#FFFFFF" points="120 139 110 139 110 49.44 104 55.47 98 49.44 98 139 89 139 89 35 99.59 35 105.62 41.03 111.66 35 120 35 "/>
-					  <polygon fill="#FFFFFF" points="224.04 97.99 224.04 71.64 214.51 71.64 214.51 97.99 206.75 97.99 206.75 39.95 214.51 39.95 214.51 64.61 224.04 64.61 224.04 39.95 231.81 39.95 231.81 97.99 "/>
-					  <path fill="#FFFFFF" d="M246.44 97.99h-7.76V49.9c0-6.63 3.1-9.94 9.3-9.94h5.82c6.2 0 9.3 3.32 9.3 9.94v48.1h-7.76v-21.26h-8.89v21.26H246.44zM255.33 69.7v-19.32c0-2.26-1.13-3.39-3.4-3.39h-2.1c-2.26 0-3.4 1.13-3.4 3.4v19.32H255.33zM293.16 84.41v3.72c0 6.58-3.1 9.86-9.3 9.86h-5.01c-6.2 0-9.3-3.29-9.3-9.86V49.82c0-6.57 3.1-9.86 9.3-9.86h5.01c6.2 0 9.3 3.29 9.3 9.86v6.55h-7.76v-5.98c0-2.26-1.16-3.4-3.48-3.4h-1.54c-2.05 0-3.07 1.13-3.07 3.4v37.19c0 2.26 1.02 3.4 3.07 3.4h1.94c2.05 0 3.07-1.13 3.07-3.39v-3.15H293.16zM306.98 97.99h-7.76V39.95h7.76V97.99zM324.85 97.99h-7.76l-9.7-28.37v-0.48l8.08-29.18h7.11l-8.16 28.86L324.85 97.99z"/>
-					  <polygon fill="#FFFFFF" points="222.51 137.37 229.7 103.26 238.27 103.26 238.27 161.3 230.51 161.3 231.32 123.31 225.5 150.79 219.52 150.79 213.7 123.31 214.51 161.3 206.75 161.3 206.75 103.26 215.31 103.26 "/>
-					  <polygon fill="#FFFFFF" points="257.92 110.29 257.92 161.3 250.15 161.3 250.15 110.29 242.72 110.29 242.72 103.26 265.35 103.26 265.35 110.29 "/>
-					  <polygon fill="#FFFFFF" points="284.27 161.3 276.51 161.3 276.51 139.96 266.97 103.26 274.65 103.26 280.47 128.48 280.71 128.48 285.96 103.26 293.65 103.26 284.27 139.96 "/>
-					  <path fill="#FFFFFF" d="M77.5 211.66v2.26h-6.78v-5.8c0-0.31 0.03-0.58 0.08-0.79 0.05-0.21 0.14-0.41 0.28-0.59 0.13-0.18 0.36-0.44 0.7-0.77l2.55-2.44c0.19-0.19 0.35-0.36 0.46-0.5 0.11-0.14 0.19-0.26 0.24-0.35 0.04-0.1 0.07-0.2 0.08-0.3 0.01-0.1 0.01-0.24 0.01-0.42v-3.49c0-0.73-0.36-1.1-1.08-1.1h-0.16c-0.72 0-1.08 0.37-1.08 1.1v1.94h-2.52v-2.1c0-2.15 1.01-3.23 3.02-3.23h1.31c2.01 0 3.02 1.08 3.02 3.23v4.52c0 0.35-0.05 0.66-0.14 0.92 -0.1 0.26-0.35 0.59-0.75 0.97l-2.78 2.68c-0.35 0.33-0.55 0.56-0.6 0.69 -0.05 0.12-0.08 0.24-0.09 0.37 -0.01 0.12-0.01 0.29-0.01 0.5v2.73H77.5zM83.2 213.92c-2.01 0-3.02-1.08-3.02-3.23v-12.4c0-2.15 1.01-3.23 3.02-3.23h1.76c2.01 0 3.02 1.08 3.02 3.23v12.4c0 2.15-1.01 3.23-3.02 3.23H83.2zM83.7 197.35c-0.67 0-1 0.37-1 1.1v12.08c0 0.74 0.38 1.1 1.13 1.1h0.63c0.67 0 1-0.37 1-1.1v-12.08c0-0.74-0.38-1.1-1.13-1.1H83.7zM90.13 199.24l-0.58-1.73c0.65-0.24 1.2-0.59 1.65-1.02 0.46-0.44 0.81-0.91 1.08-1.42h0.26l1.65 0.89v17.96h-2.49v-15.15L90.13 199.24zM96.56 209.51h2.52v1.02c0 0.74 0.33 1.1 1 1.1h0.29c0.75 0 1.13-0.37 1.13-1.1v-4.31c0-0.82-0.35-1.23-1.05-1.23h-3.81v-9.93h7.12v2.34h-4.75v5.31h2c2.01 0 3.02 1.11 3.02 3.34v4.54c0 2.23-1.01 3.34-3.02 3.34h-1.42c-2.01 0-3.02-1.06-3.02-3.2V209.51z"/>
-					</svg>
+                    <img src="http://marcormz.me/HackMTY/img/logo.svg">
 				</div>
 			</header>
 		
@@ -165,6 +861,15 @@
 		                    return false;">
 			</form>	
 		</div>
+        
+        <div id="output"></div>
 
+<script>
+    function fileUploaded(status) {
+        document.getElementById('myForm').style.display = 'none';
+        document.getElementById('output').innerHTML = status;
+    }
+</script>
+        
 	</body>
 </html>
