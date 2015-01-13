@@ -868,10 +868,7 @@
 					</li>
 
 				</ul>
-				<input type="submit" id="Submit" name="Submit" value="Submit" onclick="this.value='Uploading..';
-		                    google.script.run.withSuccessHandler(fileUploaded)
-		                    .uploadFiles(this.parentNode);
-		                    return false;">
+				<input type="submit" id="Submit" name="Submit" value="Submit">
 			</form>	
 		</div>
 
@@ -882,6 +879,10 @@
 		        alert("Form is invalid!");
 		        return false;
 		      } else {
+		      	submit.value='Uploading..';
+		      	google.script.run.withSuccessHandler(fileUploaded)
+		                    .uploadFiles(this.parentNode);
+		                    return false;
 		        function fileUploaded(status) {
 			        document.getElementById('myForm').style.display = 'none';
 			        document.getElementById('output').innerHTML = status;
@@ -889,6 +890,6 @@
 		      }
 		    });
 		</script>
-		
+
 	</body>
 </html>
