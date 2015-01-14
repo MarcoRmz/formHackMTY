@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	
+
 		<meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -869,17 +870,57 @@
 
 				</ul>
 				<input type="submit" id="Submit" name="Submit" value="Submit">
-				
+
 			</form>	
 		</div>
+        
+        <div id="output"></div>
 
-        <script>
+		<script>
 		    form.addEventListener("submit", function(evt) {
 		      if (form.checkValidity() === false) {
 		        evt.preventDefault();
 		        alert("Form is invalid!");
 		        return false;
 		      } else {
+		      	var firstName = $j('#FirstName').val();
+			        var lastName = $j('#LastName').val();
+			        var gender = $j('#Gender').val();
+			        var email = $j('#Email').val();
+			        if ((name !== "") && (email !== "") ) {
+			            $j.ajax({
+			                url: "https://docs.google.com/spreadsheets/d/1ZiMYILsLgLYSK--icAB4sUZNpaNvAQOiwbISPxtxxB4/edit?usp=sharing",
+			                data: {
+			                	"entry.2" : firstName,
+			                	"entry.3" : lastName,
+			                	"entry.4": gender,
+			                	"entry.3" : email
+			                },
+			                type: "POST",
+			                dataType: "xml",
+			                statusCode: {
+			                    0: function (){
+			 
+			                        $j('#FirstName').val();
+									$j('#LastName').val();
+									$j('#Gender').val();
+									$j('#Email').val();
+									
+			                        //Success message
+			                    },
+			                    200: function (){
+			                        $j('#FirstName').val();
+									$j('#LastName').val();
+									$j('#Gender').val();
+									$j('#Email').val();
+			                        //Success Message
+			                    }
+			                }
+			            });
+			        }
+			        else {
+			            //Error message
+			        }
 		      	submit.value='Uploading..';
 		      	google.script.run.withSuccessHandler(fileUploaded)
 		                    .uploadFiles(this.parentNode);
@@ -891,6 +932,6 @@
 		      }
 		    });
 		</script>
-
+        
 	</body>
 </html>
