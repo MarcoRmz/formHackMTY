@@ -869,10 +869,8 @@
 					</li>
 
 				</ul>
-				<input type="submit" id="Submit" name="Submit" value="Submit" onclick="this.value='Uploading..';
-		                    google.script.run.withSuccessHandler(fileUploaded)
-		                    .uploadFiles(this.parentNode);
-		                    return false;">
+				<input type="submit" id="Submit" name="Submit" value="Submit">
+
 			</form>	
 		</div>
         
@@ -885,6 +883,48 @@
 		        alert("Form is invalid!");
 		        return false;
 		      } else {
+		      	var firstName = $j('#FirstName').val();
+			        var lastName = $j('#LastName').val();
+			        var gender = $j('#Gender').val();
+			        var email = $j('#Email').val();
+			        if ((name !== "") && (email !== "") ) {
+			            $j.ajax({
+			                url: "https://docs.google.com/a/saitc-mty.com/spreadsheets/d/1ZiMYILsLgLYSK--icAB4sUZNpaNvAQOiwbISPxtxxB4/",
+			                data: {
+			                	"entry.2" : firstName,
+			                	"entry.3" : lastName,
+			                	"entry.4": gender,
+			                	"entry.3" : email
+			                },
+			                type: "POST",
+			                dataType: "xml",
+			                statusCode: {
+			                    0: function (){
+			 
+			                        $j('#FirstName').val();
+									$j('#LastName').val();
+									$j('#Gender').val();
+									$j('#Email').val();
+									
+			                        //Success message
+			                    },
+			                    200: function (){
+			                        $j('#FirstName').val();
+									$j('#LastName').val();
+									$j('#Gender').val();
+									$j('#Email').val();
+			                        //Success Message
+			                    }
+			                }
+			            });
+			        }
+			        else {
+			            //Error message
+			        }
+		      	submit.value='Uploading..';
+		      	google.script.run.withSuccessHandler(fileUploaded)
+		                    .uploadFiles(this.parentNode);
+		                    return false;
 		        function fileUploaded(status) {
 			        document.getElementById('myForm').style.display = 'none';
 			        document.getElementById('output').innerHTML = status;
